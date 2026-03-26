@@ -1,4 +1,4 @@
-import { execFile } from "child_process";
+import { execFile, execSync } from "child_process";
 import { getPreferenceValues } from "@raycast/api";
 
 interface Preferences {
@@ -21,33 +21,38 @@ export async function runDockit(args: string[]): Promise<DockitResult> {
   const python = pythonPath || "/usr/local/bin/python3";
 
   return new Promise((resolve) => {
-    execFile(python, ["-m", "dockit", ...args], { timeout: 30000 }, (error, stdout, stderr) => {
-      if (error) {
+    execFile(
+      python,
+      ["-m", "dockit", ...args],
+      { timeout: 30000 },
+      (error, stdout, stderr) => {
+        if (error) {
+          resolve({
+            success: false,
+            output: {},
+            outputFile: "",
+            error: stderr || error.message,
+          });
+          return;
+        }
+
+        let output: Record<string, unknown> = {};
+        try {
+          output = JSON.parse(stdout.trim());
+        } catch {
+          // stdout might not be valid JSON
+        }
+
+        // Extract explicit output path from -o flag, or empty string
+        const outputFile = args.find((_, i) => args[i - 1] === "-o") || "";
+
         resolve({
-          success: false,
-          output: {},
-          outputFile: "",
-          error: stderr || error.message,
+          success: true,
+          output,
+          outputFile,
         });
-        return;
-      }
-
-      let output: Record<string, unknown> = {};
-      try {
-        output = JSON.parse(stdout.trim());
-      } catch {
-        // stdout might not be valid JSON
-      }
-
-      // Extract explicit output path from -o flag, or empty string
-      const outputFile = args.find((_, i) => args[i - 1] === "-o") || "";
-
-      resolve({
-        success: true,
-        output,
-        outputFile,
-      });
-    });
+      },
+    );
   });
 }
 
@@ -56,7 +61,6 @@ export async function runDockit(args: string[]): Promise<DockitResult> {
  * Throws if nothing is selected or Finder is not frontmost.
  */
 export function getFinderSelection(): string {
-  const { execSync } = require("child_process") as typeof import("child_process");
   return execSync(
     `osascript -e 'tell application "Finder" to get POSIX path of (selection as alias)'`,
   )

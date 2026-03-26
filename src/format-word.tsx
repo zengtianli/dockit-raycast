@@ -37,7 +37,9 @@ export default async function Command() {
     await showToast({
       style: Toast.Style.Failure,
       title: "Format failed",
-      message: result.error || "Unknown error. Is dockit installed? (pip install dockit)",
+      message:
+        result.error ||
+        "Unknown error. Is dockit installed? (pip install dockit)",
     });
     return;
   }

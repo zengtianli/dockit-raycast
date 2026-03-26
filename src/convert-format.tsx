@@ -8,7 +8,9 @@ interface ConvertArguments {
 
 const SUPPORTED_INPUT_EXTENSIONS = [".xlsx", ".xls", ".csv", ".txt"];
 
-export default async function Command(props: LaunchProps<{ arguments: ConvertArguments }>) {
+export default async function Command(
+  props: LaunchProps<{ arguments: ConvertArguments }>,
+) {
   const targetFormat = props.arguments.format;
 
   // Get selected file from Finder
@@ -40,13 +42,20 @@ export default async function Command(props: LaunchProps<{ arguments: ConvertArg
     message: `${path.basename(selectedFile)} -> ${targetFormat.toUpperCase()}`,
   });
 
-  const result = await runDockit(["convert", selectedFile, "--to", targetFormat]);
+  const result = await runDockit([
+    "convert",
+    selectedFile,
+    "--to",
+    targetFormat,
+  ]);
 
   if (!result.success) {
     await showToast({
       style: Toast.Style.Failure,
       title: "Conversion failed",
-      message: result.error || "Unknown error. Is dockit installed? (pip install dockit)",
+      message:
+        result.error ||
+        "Unknown error. Is dockit installed? (pip install dockit)",
     });
     return;
   }
