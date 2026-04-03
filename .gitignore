@@ -2,3 +2,18 @@ node_modules/
 .DS_Store
 *.js
 *.js.map
+
+# Baseline (auto-added by /groom)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.env
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.egg-info/
+dist/
+build/
