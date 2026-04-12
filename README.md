@@ -49,7 +49,7 @@ Select a file in Finder → trigger the command → see results in HUD toast →
 
 | Preference | Default | Description |
 |-----------|---------|------------|
-| Python Path | `/Users/tianli/miniforge3/bin/python3` | Path to Python with dockit |
+| Python Path | `/opt/homebrew/bin/python3` | Path to Python with dockit |
 
 ## Related
 

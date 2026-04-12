@@ -7,7 +7,7 @@
 | 扩展根目录 | `/Users/tianli/Dev/dockit-raycast/` |
 | 命令入口 | `src/format-word.tsx` / `src/convert-format.tsx` / `src/standardize-ppt.tsx` |
 | Python 后端 | `python3 -m dockit`（需安装 dockit 包） |
-| Python 路径 | `/Users/tianli/miniforge3/bin/python3` |
+| Python 路径 | `/opt/homebrew/bin/python3` |
 | 调用链 | Raycast (TypeScript) → subprocess → `python3 -m dockit` |
 | 在线 Demo | https://dockit.tianlizeng.cloud |
 
@@ -50,6 +50,6 @@ src/
 
 - 扩展为 `no-view` 模式，结果通过 HUD toast 展示
 - 输出文件与输入文件同目录
-- Python 路径可在 Raycast Preferences 中修改，默认 `/Users/tianli/miniforge3/bin/python3`
+- Python 路径可在 Raycast Preferences 中修改，默认 `/opt/homebrew/bin/python3`
 - 修改 `src/` 下 tsx 文件后，`npm run dev` 状态下 Raycast 自动热重载
 - 发布前需通过 `npm run build` + `npm run lint` 无报错
