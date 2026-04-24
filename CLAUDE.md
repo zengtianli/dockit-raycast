@@ -4,7 +4,7 @@
 
 | 项目 | 路径/值 |
 |------|---------|
-| 扩展根目录 | `/Users/tianli/Dev/dockit-raycast/` |
+| 扩展根目录 | `/Users/tianli/Dev/tools/raycast/dockit-ext/` |
 | 命令入口 | `src/format-word.tsx` / `src/convert-format.tsx` / `src/standardize-ppt.tsx` |
 | Python 后端 | `python3 -m dockit`（需安装 dockit 包） |
 | Python 路径 | `/opt/homebrew/bin/python3` |
@@ -15,7 +15,7 @@
 
 ```bash
 # 开发模式（在 Raycast 中热重载）
-cd /Users/tianli/Dev/dockit-raycast
+cd /Users/tianli/Dev/tools/raycast/dockit-ext
 npm run dev
 
 # 构建
