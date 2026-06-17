@@ -9,7 +9,7 @@
 | Python 后端 | `python3 -m dockit`（需安装 dockit 包） |
 | Python 路径 | `/opt/homebrew/bin/python3` |
 | 调用链 | Raycast (TypeScript) → subprocess → `python3 -m dockit` |
-| 在线 Demo | https://dockit.tianlizeng.cloud |
+| 在线 Demo | https://dockit.tianli.cyou |
 
 ## 常用命令
 

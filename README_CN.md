@@ -40,7 +40,7 @@ Finder 选择文件 → 触发命令 → HUD 通知结果 → 输出保存到同
 ## 相关资源
 
 - [DocKit](https://github.com/zengtianli/dockit) — Python 核心库
-- [DocKit Web](https://dockit.tianlizeng.cloud) — 在线演示
+- [DocKit Web](https://dockit.tianli.cyou) — 在线演示
 
 ## 许可证
 

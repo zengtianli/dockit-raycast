@@ -54,7 +54,7 @@ Select a file in Finder → trigger the command → see results in HUD toast →
 ## Related
 
 - [DocKit](https://github.com/zengtianli/dockit) — the Python core library
-- [DocKit Web](https://dockit.tianlizeng.cloud) — online demo, no install needed
+- [DocKit Web](https://dockit.tianli.cyou) — online demo, no install needed
 
 ## License
 
