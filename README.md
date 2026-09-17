@@ -1,60 +1,46 @@
 # DocKit for Raycast
 
-Fix formatting in Word, PowerPoint, and Excel files — right from Raycast.
+**中文** | [English](README_EN.md)
+
+一键修复 Word、PowerPoint 和 Excel 文件的格式问题 — 直接在 Raycast 中操作。
 
 [![Raycast Store](https://img.shields.io/badge/Raycast_Store-pending-orange?style=for-the-badge)](https://www.raycast.com/zengtianli/dockit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-## Install
+## 安装
 
 > Raycast Store 审核中。目前通过源码安装：
 
-1. 安装 Python 后端：
-   ```bash
-   pip install git+https://github.com/zengtianli/dockit.git
-   ```
+```bash
+# 安装 Python 后端
+pip install git+https://github.com/zengtianli/dockit.git
 
-2. 安装扩展：
-   ```bash
-   git clone https://github.com/zengtianli/dockit-raycast.git
-   cd dockit-raycast
-   npm install && npm run dev
-   ```
+# 安装扩展
+git clone https://github.com/zengtianli/dockit-raycast.git
+cd dockit-raycast
+npm install && npm run dev
+```
 
-3. 在 Raycast 中搜索 "Format Word" / "Convert Spreadsheet" / "Standardize PowerPoint" 即可使用
+## 命令
 
-## Commands
+| 命令 | 功能 |
+|------|------|
+| **Format Word Document** | 修复中文引号配对、英文标点转中文、标准化单位符号 |
+| **Convert Spreadsheet Format** | Excel/CSV/TXT 格式转换，支持自动检测 |
+| **Standardize PowerPoint** | 统一字体、修复文本格式、一键设置表格样式 |
 
-| Command | Description |
-|---------|------------|
-| **Format Word Document** | Fix Chinese quote pairing, convert English punctuation to Chinese, standardize unit symbols (e.g. 平方米 → m²) |
-| **Convert Spreadsheet Format** | Convert between Excel (XLSX), CSV, and TXT with auto-detection |
-| **Standardize PowerPoint** | Unify fonts, fix text formatting, and set table styles in one click |
-
-## How it works
+## 工作原理
 
 ```
 Raycast (TypeScript) → subprocess → python3 -m dockit → dockit core
 ```
 
-Select a file in Finder → trigger the command → see results in HUD toast → output file in the same directory.
+Finder 选择文件 → 触发命令 → HUD 通知结果 → 输出保存到同一目录。
 
-## Prerequisites
+## 相关资源
 
-- macOS
-- Python 3.10+ with [dockit](https://github.com/zengtianli/dockit) installed
-- Raycast
+- [DocKit](https://github.com/zengtianli/dockit) — Python 核心库
 
-## Configuration
-
-| Preference | Default | Description |
-|-----------|---------|------------|
-| Python Path | `/opt/homebrew/bin/python3` | Path to Python with dockit |
-
-## Related
-
-- [DocKit](https://github.com/zengtianli/dockit) — the Python core library
-
-## License
+## 许可证
 
 MIT
