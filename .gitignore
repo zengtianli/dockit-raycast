@@ -17,3 +17,6 @@ Thumbs.db
 *.egg-info/
 dist/
 build/
+
+# 本地登记文件不进公开仓
+project.yaml
